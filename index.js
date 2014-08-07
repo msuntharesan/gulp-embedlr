@@ -19,7 +19,7 @@ var embedlr = function (param) {
       }));
     };
 
-    if(file.isNull() || path.extname(file.path) !== '.html') {
+    if(file.isNull() || !~path.extname(file.path).indexOf('html')) {
       //Passthrough if not file or not html-file
       this.push(file);
       return callback();
